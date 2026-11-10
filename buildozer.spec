@@ -1,6 +1,8 @@
 
 [app]
 
+p4a.branch = develop
+
 # (string) Title of your application
 title = Hello Justin
 
