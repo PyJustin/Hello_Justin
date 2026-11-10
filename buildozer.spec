@@ -43,7 +43,8 @@ android.minapi = 24
 
 # (bool) Use architecture-specific builds (True reduces file size if building for one arch)
 # For GitHub actions, keeping it False builds a universal APK that works on most phones
-android.archs = arm64-v8a, armeabi-v7a
+android.archs = arm64-v8a
+
 
 # (list) The Android architectures for which to build
 # (str) Android entry point, default is ok for Kivy/Pygame
