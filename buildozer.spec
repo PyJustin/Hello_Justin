@@ -23,8 +23,9 @@ source.include_exts = py,png,jpg,kv,atlas,wav,mp3,ogg,ttf,otf,ico
 version = 0.1
 
 # (list) Application requirements
-# KEY FIX: Standard pygame and pgzero included together
-requirements = python3,pygame==2.1.0,pgzero,numpy==1.21.6
+# KEY FIX: Standard pygame and pgzero included together 
+requirements = python3,pygame,pgzero,numpy
+
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
 orientation = portrait
