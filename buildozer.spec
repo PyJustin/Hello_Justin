@@ -26,7 +26,8 @@ version = 0.1
 
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together 
-requirements = python3,kivy
+requirements = python3==3.11,kivy
+
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
 orientation = portrait
