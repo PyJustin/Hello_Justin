@@ -36,7 +36,8 @@ android.permissions = INTERNET, VIBRATE
 # (int) Target Android API, should be as high as possible.
 android.api = 33
 android.minapi = 21
-android.ndk_api = 21
+android.minapi = 24
+
 
 # (bool) Use architecture-specific builds (True reduces file size if building for one arch)
 # For GitHub actions, keeping it False builds a universal APK that works on most phones
