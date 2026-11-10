@@ -1,6 +1,6 @@
 import pgzrun
 
-# --- Pygame Zero Game Setup --- 
+# --- Pygame Zero Game Setup ---  
 WIDTH = 800
 HEIGHT = 600
 
