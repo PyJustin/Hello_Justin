@@ -47,9 +47,8 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install Cython==0.29.33
-        # Install the absolute latest development versions to ensure modern toolchain compatibility
-        pip install git+https://github.com
-        pip install git+https://github.com
+        pip install "git+https://github.com"
+        pip install "git+https://github.com"
 
     - name: Pre-bundle Pygame Zero
       run: |
