@@ -24,7 +24,7 @@ version = 0.1
 
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together 
-requirements = python3,pygame,pgzero,numpy
+requirements = python3,pygame,numpy
 
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
