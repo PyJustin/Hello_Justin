@@ -77,7 +77,9 @@ jobs:
       run: |
         mkdir -p ~/.android
         touch ~/.android/repositories.cfg
-        buildozer android clean
+        # Clean the workspace safely using Linux commands instead of buildozer clean
+        rm -rf .buildozer/
+        rm -rf bin/
         yes | buildozer android debug
       env:
         ACCEPT_SDK_LICENSE: "y"
