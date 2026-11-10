@@ -24,8 +24,7 @@ version = 0.1
 
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together
-requirements = python3,pygame,pgzero,numpy
-
+requirements = python3,pygame==2.1.0,pgzero,numpy==1.21.6
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
 orientation = portrait
@@ -35,13 +34,9 @@ orientation = portrait
 android.permissions = INTERNET, VIBRATE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 34
-
-# (int) Minimum API your APK will support.
+android.api = 33
 android.minapi = 21
-
-# (str) Android NDK version to use
-android.ndk = 25b
+android.ndk_api = 21
 
 # (bool) Use architecture-specific builds (True reduces file size if building for one arch)
 # For GitHub actions, keeping it False builds a universal APK that works on most phones
