@@ -76,7 +76,9 @@ jobs:
 
     - name: Build APK with Buildozer
       run: |
-        buildozer android debug
+        mkdir -p ~/.android
+        touch ~/.android/repositories.cfg
+        yes | buildozer android debug
       env:
         ACCEPT_SDK_LICENSE: "y"
 
@@ -84,5 +86,8 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pygame-zero-apk
-        path: bin/*.apk
+        path: |
+          bin/*.apk
+          .buildozer/android/platform/build-**/dists/**/build/outputs/apk/debug/*.apk
+      if: always()
 
