@@ -8,88 +8,28 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Pre-bundle Pygame Zero
+      run: |
+        # Download pure python pgzero directly into source directory
+        pip install pgzero --target . --no-deps
+
+    - name: Build APK with Buildozer Docker
+      uses: ArtemSBulgakov/buildozer-action@v1
       with:
-        python-version: '3.10'
-
-    - name: Install System Dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y --no-install-recommends \
-          build-essential \
-          git \
-          ffmpeg \
-          libunwind-dev \
-          libgstreamer1.0-dev \
-          libgstreamer-plugins-base1.0-dev \
-          libssl-dev \
-          libffi-dev \
-          libsqlite3-dev \
-          sqlite3 \
-          bzip2 \
-          libbz2-dev \
-          zlib1g-dev \
-          openssl \
-          libgdbm-dev \
-          libgdbm-compat-dev \
-          liblzma-dev \
-          libreadline-dev \
-          libncursesw5-dev \
-          libffi-dev \
-          uuid-dev \
-          libgstreamer1.0-0 \
-          gstreamer1.0-plugins-base \
-          gstreamer1.0-plugins-good \
-          gstreamer1.0-plugins-bad \
-          gstreamer1.0-plugins-ugly \
-          gstreamer1.0-libav \
-          gstreamer1.0-tools \
-          gstreamer1.0-x \
-          gstreamer1.0-alsa \
-          gstreamer1.0-gl \
-          gstreamer1.0-gtk3 \
-          gstreamer1.0-qt5 \
-          gstreamer1.0-pulseaudio \
-          unzip \
-          zip \
-          openjdk-17-jdk \
-          autoconf \
-          libtool \
-          pkg-config \
-          libncurses5-dev \
-          libncursesw5-dev \
-          cmake \
-          libstdc++6
-
-    - name: Install Buildozer and Cython
-      run: |
-        pip install --upgrade pip
-        pip install Cython==0.29.33 buildozer
-
-    - name: Build APK with Buildozer
-      run: |
-        mkdir -p ~/.android
-        touch ~/.android/repositories.cfg
-        # Clean the workspace safely using Linux commands instead of buildozer clean
-        rm -rf .buildozer/
-        rm -rf bin/
-        yes | buildozer android debug
-      env:
-        ACCEPT_SDK_LICENSE: "y"
+        buildozer_version: stable
+        command: buildozer android debug
+        repository_root: .
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: pygame-zero-apk
-        path: |
-          bin/*.apk
-          .buildozer/android/platform/build-**/dists/**/build/outputs/apk/debug/*.apk
+        path: bin/*.apk
       if: always()
 
