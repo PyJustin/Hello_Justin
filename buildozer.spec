@@ -38,6 +38,8 @@ android.permissions = INTERNET, VIBRATE
 # (int) Target Android API, should be as high as possible.
 android.api = 33
 android.minapi = 24
+android.ndk = 25c
+
 
 
 # (bool) Use architecture-specific builds (True reduces file size if building for one arch)
