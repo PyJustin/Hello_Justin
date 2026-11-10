@@ -77,6 +77,7 @@ jobs:
       run: |
         mkdir -p ~/.android
         touch ~/.android/repositories.cfg
+        buildozer android clean
         yes | buildozer android debug
       env:
         ACCEPT_SDK_LICENSE: "y"
