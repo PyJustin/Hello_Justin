@@ -43,10 +43,13 @@ jobs:
           cmake \
           libstdc++6
 
-    - name: Install Buildozer and Cython
+    - name: Install Bleeding-Edge Buildozer and python-for-android
       run: |
         pip install --upgrade pip
-        pip install Cython==0.29.33 buildozer
+        pip install Cython==0.29.33
+        # Install the absolute latest development versions to ensure modern toolchain compatibility
+        pip install git+https://github.com
+        pip install git+https://github.com
 
     - name: Pre-bundle Pygame Zero
       run: |
