@@ -35,7 +35,6 @@ android.permissions = INTERNET, VIBRATE
 
 # (int) Target Android API, should be as high as possible.
 android.api = 33
-android.minapi = 21
 android.minapi = 24
 
 
