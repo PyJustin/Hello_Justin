@@ -8,23 +8,60 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Install System Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y --no-install-recommends \
+          build-essential \
+          git \
+          ffmpeg \
+          libssl-dev \
+          libffi-dev \
+          libsqlite3-dev \
+          sqlite3 \
+          bzip2 \
+          libbz2-dev \
+          zlib1g-dev \
+          openssl \
+          unzip \
+          zip \
+          openjdk-17-jdk \
+          autoconf \
+          libtool \
+          pkg-config \
+          cmake \
+          libstdc++6
+
+    - name: Install Buildozer and Cython
+      run: |
+        pip install --upgrade pip
+        pip install Cython==0.29.33 buildozer
+
     - name: Pre-bundle Pygame Zero
       run: |
-        # Download pure python pgzero directly into source directory
+        # Pre-bundle pure python pgzero directly into your project files
         pip install pgzero --target . --no-deps
 
-    - name: Build APK with Buildozer Docker
-      uses: ArtemSBulgakov/buildozer-action@v1
-      with:
-        buildozer_version: stable
-        command: buildozer android debug
-        repository_root: .
+    - name: Build APK with Buildozer
+      run: |
+        mkdir -p ~/.android
+        touch ~/.android/repositories.cfg
+        rm -rf .buildozer/
+        rm -rf bin/
+        yes | buildozer android debug
+      env:
+        ACCEPT_SDK_LICENSE: "y"
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
