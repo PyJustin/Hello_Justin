@@ -68,6 +68,6 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: pygame-zero-apk
-        path: bin/*.apk
+        path:  "**/*.apk"
       if: always()
 
