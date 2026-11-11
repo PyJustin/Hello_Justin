@@ -8,7 +8,7 @@ title = Hello Justin
 package.name = pgzerohellojustin
 
 # (str) Icon of the application
-icon.filename = favicon.ico
+icon.filename = favicon.png
 
 # (string) Package domain (needed for android packaging)
 package.domain = org.justin
