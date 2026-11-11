@@ -1,7 +1,7 @@
 
 [app]
 
-# p4a.branch = develop
+p4a.branch = develop
 
 # (string) Title of your application
 title = Hello Justin
@@ -25,7 +25,7 @@ version = 0.1
 
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together 
-requirements = hostpython3==3.11,python3==3.11,kivy, pgzero, pygame, numpy, sdl2, sdl2_image, sdl2_mixer, sdl2_ttf, png, jpeg
+requirements = python3, kivy, pygame, pgzero, numpy
 
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
