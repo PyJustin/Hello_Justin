@@ -20,14 +20,12 @@ source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
 source.include_exts = py,png,jpg,kv,atlas,wav,mp3,ogg,ttf,otf,ico
-
 # (string) Application versioning (method 1)
 version = 0.1
 
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together 
-requirements = hostpython3==3.11,python3==3.11,kivy
-
+requirements = hostpython3==3.11,python3==3.11,kivy, pgzero, pygame, numpy, sdl2, sdl2_image, sdl2_mixer, sdl2_ttf, png, jpeg
 
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
