@@ -54,7 +54,7 @@ jobs:
     - name: Install Buildozer and Cython
       run: |
         pip install --upgrade pip setuptools wheel packaging
-        pip install "Cython>=3.0.0" buildozer python-for-android
+        pip install Cython==0.29.36 buildozer python-for-android        
 
     - name: Pre-bundle Pygame Zero
       run: |
