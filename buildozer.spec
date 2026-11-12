@@ -23,8 +23,8 @@ version = 0.1
 
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together  
+requirements = python3,numpy==1.26.4,pygame
 
-requirements = python3,numpy,pygame,pgzero
 
 p4a.branch = develop
 p4a.bootstrap = sdl2
