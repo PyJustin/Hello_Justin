@@ -24,7 +24,8 @@ version = 0.1
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together  
 
-requirements = hostpython3==3.10.12, python3==3.10.12, pygame, pgzero
+requirements = python3,numpy,pygame,pgzero
+
 p4a.branch = develop
 p4a.bootstrap = sdl2
 
@@ -40,7 +41,7 @@ orientation = portrait
 android.permissions = INTERNET, VIBRATE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 33
+android.api = 35
 android.minapi = 24
 android.ndk = 25c
 
