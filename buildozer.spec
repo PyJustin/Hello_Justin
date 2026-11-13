@@ -14,6 +14,7 @@ icon.filename = favicon.png
 package.domain = org.justin
 
 # value 1 means FULL SCRREN else 0 will display  clock time etc. on top line. 
+# for this to work on Android you need setting android.api = 33 or 34
 fullscreen = 1
 
 # (string) Source code where the main.py lives
