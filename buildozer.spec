@@ -13,7 +13,7 @@ icon.filename = favicon.png
 # (string) Package domain (needed for android packaging)
 package.domain = org.justin
 
-# value 1 means FULL SCRREN else 0 will display  clock time etc. on top line.
+# value 1 means FULL SCRREN else 0 will display  clock time etc. on top line. 
 fullscreen = 1
 
 # (string) Source code where the main.py lives
