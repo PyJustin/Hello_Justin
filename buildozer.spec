@@ -46,8 +46,8 @@ orientation = landscape
 # Required if your game uses sound or reads local files
 android.permissions = INTERNET, VIBRATE
 
-# (int) Target Android API, should be as high as possible.
-android.api = 35
+# (int) Target Android API should be 34 as 35 is only needed for the Play Store.
+android.api = 34
 android.minapi = 24
 android.ndk = 25c
 
