@@ -24,7 +24,8 @@ version = 0.1
 # (list) Application requirements
 # KEY FIX: Standard pygame and pgzero included together  
 
-requirements = hostpython3==3.11.9,python3==3.11.9,numpy==v1.26.4,pygame==2.5.2
+requirements = hostpython3==3.11.9,python3==3.11.9,cython,numpy==v1.26.4,pygame==2.5.2
+
 
 
 p4a.branch = develop
