@@ -13,6 +13,9 @@ icon.filename = favicon.png
 # (string) Package domain (needed for android packaging)
 package.domain = org.justin
 
+# value 1 means FULL SCRREN else 0 will display  clock time etc. on top line.
+fullscreen = 1
+
 # (string) Source code where the main.py lives
 source.dir = .
 
@@ -36,7 +39,8 @@ p4a.bootstrap = sdl2
 
 
 # (str) Supported orientations (valid options are: landscape, portrait, portrait-reverse, landscape-reverse)
-orientation = portrait
+#orientation = portrait
+orientation = landscape
 
 # (list) Permissions
 # Required if your game uses sound or reads local files
