@@ -24,7 +24,7 @@ def draw():
     screen.draw.text("Justin!", (300, 180), fontname="skincake", fontsize=60, color=(255, 0, 0))
 
     # Draw the smoothed FPS counter
-    screen.draw.text(fps_display_text, topleft=(10, 10), fontsize=65, color=((0,0,205)))
+    screen.draw.text(fps_display_text, topleft=(10, 10), fontsize=65, color=((124,252,0)))
 
 
 # =================================================================================================================
